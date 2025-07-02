@@ -36,7 +36,7 @@ header {
 }
 
 .navbar a {
-  color: white;
+  color: #e7e7dd;
   text-decoration: none;
   font-size: 18px;
   padding: 8px 16px;
@@ -48,7 +48,7 @@ header {
 }
 
 .navbar a:hover {
-  background-color: #006666;
+  background-color: #0f3157;
 }
 
 @font-face {
