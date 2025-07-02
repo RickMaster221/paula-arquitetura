@@ -5,10 +5,18 @@ body {
   color: #333;
 }
 
+header,
+.navbar,
+.entrada-banner,
+footer {
+  margin: 0;
+  padding: 0;
+}
+
 header {
   background: #008890;
   color: #e7e7dd;
-  padding: 20px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,7 +25,7 @@ header {
 
 .navbar {
   background-color: #00597b;
-  padding: 10px 0;
+  padding: 5px 0;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -52,59 +60,52 @@ header {
 }
 
 @font-face {
-    font-family: 'BOOWIE';
-    src: url(fonts/BOOWIE.ttf);
+  font-family: 'BOOWIE';
+  src: url(fonts/BOOWIE.ttf);
 }
+
 .title {
-   /* Faz o contêiner dos títulos crescer para preencher o espaço */
-    flex-grow: 1; 
-    /* Centraliza o conteúdo (h1 e h2) dentro deste contêiner */
-    text-align: center; 
-    /* Use flexbox para alinhar o h1 e h2 na mesma linha */
-    display: flex;
-    align-items: baseline; /* Alinha pela linha de base do texto */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 10px;
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
 }
 
 .title h1 {
-    font-family: 'BOOWIE', sans-serif;
-    font-size: 36px;
-    margin: 0;
-    /* Adicione um espaçamento à direita para separar do h2 */
-    /* margin-right: 10px; */
+  font-family: 'BOOWIE', sans-serif;
+  font-size: 36px;
+  margin: 0;
 }
 
-.subtitle h2{
-    font-family: 'BOOWIE', sans-serif;
-    font-size: 24px;
-    margin: 0;
-    /* Remova o 'display: block' para que ele fique ao lado do h1 */
-    display: inline; 
+.subtitle h2 {
+  font-family: 'BOOWIE', sans-serif;
+  font-size: 24px;
+  margin: 0;
+  display: inline;
 }
+
 .logo-carousel {
-    position: relative;
-    width: 120px; /* Largura que você já tinha para o logo */
-    height: 120px; /* Altura que você já tinha ou ajuste conforme necessário */
-    overflow: hidden; /* Esconde as imagens que não estão ativas */
-    flex-shrink: 0; /* Impede que ele encolha no flexbox do header */
+  position: relative;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
-/* Estilo para cada slide de logo */
 .logo-carousel .logo-slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0; /* Todas as imagens ficam invisíveis por padrão */
-    transition: opacity 1s ease-in-out; /* Transição suave entre as imagens */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-/* Apenas a imagem com a classe 'active' será visível */
 .logo-carousel .logo-slide.active {
-    opacity: 1;
+  opacity: 1;
 }
 
-/* Estilo para as imagens dentro dos slides */
 .logo-carousel img {
   max-width: 100%;
   height: auto;
@@ -131,7 +132,7 @@ header {
 }
 
 .carousel img, .carousel video {
-  max-width: 400px; /* Ou outro valor, como 500px */
+  max-width: 400px;
   height: auto;
   border-radius: 10px;
 }
@@ -151,7 +152,7 @@ header {
   padding: 20px;
   text-align: center;
   font-size: 25px;
-  background: rgb(165, 165, 165)
+  background: rgb(165, 165, 165);
 }
 
 .cta {
@@ -160,19 +161,14 @@ header {
 }
 
 .entrada-banner .botoes-container {
-    /* POSICIONAMENTO DO CONTÊINER DOS BOTÕES */
-    position: absolute; /* Posiciona o contêiner em relação ao seu pai mais próximo com posição não-estática (neste caso, provavelmente a .entrada-banner) */
-    bottom: 20px;      /* Distância da borda inferior do pai */
-    right: 20px;       /* Distância da borda direita do pai */
-
-    /* ORGANIZAÇÃO DOS BOTÕES DENTRO DESTE CONTÊINER USANDO FLEXBOX */
-    display: flex;             /* Transforma o contêiner em um flex container */
-    flex-direction: column;    /* Organiza os itens (seus botões) em uma coluna, um abaixo do outro */
-    gap: 15px;                 /* Adiciona um espaço de 15px entre os botões */
-    align-items: flex-end;     /* Alinha os itens flex (os botões) à direita dentro do contêiner. */
-                               /* Se quiser que eles fiquem alinhados à esquerda do contêiner, use 'flex-start' */
-                               /* Se quiser que fiquem centralizados no contêiner, use 'center' */
-    z-index: 100;              /* Garante que os botões fiquem acima de outros elementos se houver sobreposição */
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-end;
+  z-index: 100;
 }
 
 .btn {
@@ -196,7 +192,7 @@ footer {
 
 footer a {
   color: white;
-   font-size: 30px;
+  font-size: 30px;
   margin: 0 10px;
   text-decoration: none;
 }
@@ -208,7 +204,6 @@ footer a {
   color: #1f1f1f;
 }
 
-/* Formulário de contato */
 .form-contato {
   display: flex;
   flex-direction: column;
@@ -243,6 +238,7 @@ footer a {
 .form-contato button:hover {
   background-color: #006666;
 }
+
 .slide-content {
   display: flex;
   align-items: center;
@@ -251,7 +247,7 @@ footer a {
   flex-wrap: wrap;
   text-align: left;
 }
-/* Botão de voltar */
+
 .prev, .next {
   position: absolute;
   top: 50%;
@@ -273,7 +269,6 @@ footer a {
   right: 30px;
 }
 
-/* Inverte layout quando tiver classe reverse */
 .carousel-slide.reverse .slide-content {
   flex-direction: row-reverse;
 }
@@ -294,7 +289,7 @@ footer a {
 .entrada-conteudo {
   position: absolute;
   top: 20%;
-  left: 50px; /* afasta da borda esquerda */
+  left: 50px;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
@@ -321,12 +316,12 @@ footer a {
 }
 
 .entrada-conteudo h2 {
-  font-size: 36px;  /* antes: 28px */
+  font-size: 36px;
   margin: 0;
 }
 
 .entrada-conteudo .local {
-  font-size: 20px;  /* antes: 16px */
+  font-size: 20px;
   font-weight: 300;
   margin: 10px 0;
 }
@@ -341,7 +336,7 @@ footer a {
   text-align: justify;
   color: white;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.6); /* opcional para contraste */
+  background: rgba(0, 0, 0, 0.6);
   padding: 10px;
   border-radius: 10px;
 }
@@ -349,12 +344,13 @@ footer a {
 .carousel-slide img,
 .carousel-slide video {
   width: 100%;
-  aspect-ratio: 1 / 1;       /* mantém o formato quadrado */
-  object-fit: cover;         /* recorta sem distorcer */
-  max-width: 300px;          /* tamanho máximo no desktop */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  max-width: 300px;
   border-radius: 10px;
   display: block;
 }
+
 .logo a {
   display: inline-block;
 }
@@ -364,7 +360,7 @@ footer a {
 }
 
 .visually-hidden {
-    text-align: center;
+  text-align: center;
 }
 
 .social-links {
@@ -373,7 +369,7 @@ footer a {
   flex-wrap: wrap;
   gap: 20px;
   padding: 10px;
-}  
+}
 
 .social-links a {
   color: #333;
@@ -391,10 +387,11 @@ footer a {
     font-size: 28px;
   }
 }
+
 .banner-entrada-carousel {
   position: relative;
   width: 100%;
-  height: 800px; /* ou o tamanho que preferir */
+  height: 800px;
   overflow: hidden;
 }
 
@@ -415,35 +412,34 @@ footer a {
   height: 100%;
   object-fit: cover;
 }
+
 .botao-flutuante {
-    position: fixed;
-    /* ... outras propriedades de estilo ... */
-    background: linear-gradient(to right, #f13b2d, #fdba17);
-    color: #1c1c1c;
-    padding: 24px 40px;
-    font-size: 32px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  position: fixed;
+  background: linear-gradient(to right, #f13b2d, #fdba17);
+  color: #1c1c1c;
+  padding: 24px 40px;
+  font-size: 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .botao-flutuante:hover {
-    transform: translateY(-4px);
+  transform: translateY(-4px);
 }
 
-/* Posiciona o botão "Portifólio" */
 .botao-portfolio .botao-flutuante {
-    bottom: 120px; /* Altere este valor para o botão ficar mais acima */
-    right: 20px;
+  bottom: 120px;
+  right: 20px;
 }
 
-/* Posiciona o botão "Peça um Orçamento" */
 .botao-contato .botao-flutuante {
-    bottom: 20px; /* Este ficará mais abaixo */
-    right: 20px;
+  bottom: 20px;
+  right: 20px;
 }
+
 .localizacao {
   margin-top: 20px;
   text-align: left;
@@ -463,6 +459,3 @@ footer a {
 .localizacao a:hover {
   background-color: #006666;
 }
-
-
-
