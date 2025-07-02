@@ -159,7 +159,7 @@ header {
   margin: 30px 0;
 }
 
-.botoes-container {
+.entrada-banner .botoes-container {
     /* POSICIONAMENTO DO CONTÊINER DOS BOTÕES */
     position: absolute; /* Posiciona o contêiner em relação ao seu pai mais próximo com posição não-estática (neste caso, provavelmente a .entrada-banner) */
     bottom: 20px;      /* Distância da borda inferior do pai */
