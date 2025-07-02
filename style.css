@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #f8f8f8;
+  background: #e7e7dd;
   color: #333;
 }
 
@@ -16,7 +16,7 @@ header {
 }
 
 .navbar {
-  background-color: #008080;
+  background-color: #00597b;
   padding: 10px 0;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
