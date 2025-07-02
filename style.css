@@ -55,32 +55,25 @@ header {
     font-family: 'BOOWIE';
     src: url(fonts/BOOWIE.ttf);
 }
+.title-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .title {
-   /* Faz o contêiner dos títulos crescer para preencher o espaço */
-    flex-grow: 1; 
-    /* Centraliza o conteúdo (h1 e h2) dentro deste contêiner */
-    text-align: center; 
-    /* Use flexbox para alinhar o h1 e h2 na mesma linha */
-    display: flex;
-    align-items: baseline; /* Alinha pela linha de base do texto */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 10px;
+  font-family: 'BOOWIE', sans-serif;
+  font-size: 36px;
+  margin: 0;
+  text-align: center;
 }
 
-.title h1 {
-    font-family: 'BOOWIE', sans-serif;
-    font-size: 36px;
-    margin: 0;
-    /* Adicione um espaçamento à direita para separar do h2 */
-    /* margin-right: 10px; */
-}
-
-.subtitle h2{
-    font-family: 'BOOWIE', sans-serif;
-    font-size: 24px;
-    margin: 0;
-    /* Remova o 'display: block' para que ele fique ao lado do h1 */
-    display: inline; 
+.subtitle h2 {
+  font-family: 'BOOWIE', sans-serif;
+  font-size: 24px;
+  margin: 0;
+  text-align: right;
 }
 .logo-carousel {
   width: 120px;
