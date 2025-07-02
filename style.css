@@ -112,13 +112,6 @@ header {
     display: block;
 }
 
-
-.logo {
-    max-width: 120px;
-    flex-shrink: 0;
-}
-
-
 .fake-logo {
   visibility: hidden; /* invisível, mas ocupa espaço */
 }
