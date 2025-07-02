@@ -106,7 +106,7 @@ header {
 
 /* Estilo para as imagens dentro dos slides */
 .logo-carousel img {
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
     display: block;
