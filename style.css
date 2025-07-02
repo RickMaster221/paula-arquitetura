@@ -110,14 +110,6 @@ header {
   height: auto;
   display: block;
 }
-.logo {
-  max-width: 120px; /* Largura máxima do logo */
-  flex-shrink: 0; /* Impede que o logo encolha */
-}
-
-.fake-logo {
-  visibility: hidden; /* invisível, mas ocupa espaço */
-}
 
 .carousel {
   position: relative;
