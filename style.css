@@ -55,38 +55,18 @@ header {
     font-family: 'BOOWIE';
     src: url(fonts/BOOWIE.ttf);
 }
-.title-container {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.title {
-  font-family: 'BOOWIE', sans-serif;
-  font-size: 36px;
-  margin: 0;
-  text-align: center;
-}
-
-.subtitle h2 {
-  font-family: 'BOOWIE', sans-serif;
-  font-size: 24px;
-  margin: 0;
-  text-align: right;
-}
 .logo-carousel {
-  width: 120px;
-  height: 120px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  position: relative;
-  overflow: hidden;
 }
 
-.logo-carousel .logo-slide {
+.logo-slide {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -94,14 +74,46 @@ header {
   transition: opacity 1s ease-in-out;
 }
 
-.logo-carousel .logo-slide.active {
+.logo-slide.active {
   opacity: 1;
 }
 
 .logo-carousel img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  display: block;
+}
+
+/* Título centralizado */
+.title {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title h1 {
+  font-family: 'BOOWIE', sans-serif;
+  font-size: 32px;
+  margin: 0;
+}
+
+/* Subtítulo à direita */
+.subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  width: 180px; /* Ajustável conforme o texto */
+  text-align: right;
+}
+
+.subtitle h2 {
+  font-family: 'BOOWIE', sans-serif;
+  font-size: 18px;
+  margin: 0;
 }
 
 .carousel {
