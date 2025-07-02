@@ -67,26 +67,71 @@ document.querySelectorAll('video').forEach(video => {
   });
 });
 
+// ===========================================
+// LÓGICA DO CARROSSEL DO LOGO (logo-carousel)
+// Este código faz as imagens do seu logo alternarem automaticamente.
+// ===========================================
+let logoIndex = 0;
+const logoSlides = document.querySelectorAll(".logo-carousel .logo-slide");
+
+function showNextLogo() {
+    // Verifica se há slides de logo para evitar erros
+    if (!logoSlides || logoSlides.length === 0) {
+        console.warn("Nenhum slide de logo encontrado para o carrossel.");
+        return;
+    }
+
+    // Remove a classe 'active' do slide de logo atual para escondê-lo
+    logoSlides[logoIndex].classList.remove("active");
+
+    // Calcula o índice do próximo slide (volta ao primeiro se for o último)
+    logoIndex = (logoIndex + 1) % logoSlides.length;
+
+    // Adiciona a classe 'active' ao novo slide de logo para exibi-lo
+    logoSlides[logoIndex].classList.add("active");
+}
+
+// Inicia a troca automática dos logos se houver mais de um slide
+if (logoSlides.length > 1) { // Só faz sentido se tiver mais de uma imagem para alternar
+    setInterval(showNextLogo, 4000); // Troca a cada 4 segundos (4000 milissegundos)
+} else if (logoSlides.length === 1) {
+    // Se houver apenas um logo, certifique-se de que ele esteja visível
+    logoSlides[0].classList.add("active");
+}
+
+
+// ===========================================
+// LÓGICA DO CARROSSEL DO BANNER PRINCIPAL (banner-entrada-carousel)
+// Este código faz as imagens do seu banner principal alternarem automaticamente.
+// ===========================================
 let bannerIndex = 0;
-const bannerSlides = document.querySelectorAll(".banner-index-carousel .slide");
+const bannerSlides = document.querySelectorAll(".banner-entrada-carousel .slide");
 
 function showNextBanner() {
-  bannerSlides[bannerIndex].classList.remove("active");
-  bannerIndex = (bannerIndex + 1) % bannerSlides.length;
-  bannerSlides[bannerIndex].classList.add("active");
+    // Verifica se há slides de banner para evitar erros
+    if (!bannerSlides || bannerSlides.length === 0) {
+        console.warn("Nenhum slide de banner encontrado para o carrossel principal.");
+        return;
+    }
+
+    // Remove a classe 'active' do slide de banner atual para escondê-lo
+    bannerSlides[bannerIndex].classList.remove("active");
+
+    // Calcula o índice do próximo slide (volta ao primeiro se for o último)
+    bannerIndex = (bannerIndex + 1) % bannerSlides.length;
+
+    // Adiciona a classe 'active' ao novo slide de banner para exibi-lo
+    bannerSlides[bannerIndex].classList.add("active");
 }
 
-setInterval(showNextBanner, 4000);
-// 
-let currentBanner = 0;
-const track = document.querySelector(".carousel-track");
-const totalSlides = track.children.length;
-
-function slideBanner() {
-  currentBanner = (currentBanner + 1) % totalSlides;
-  const offset = -currentBanner * 100;
-  track.style.transform = `translateX(${offset}%)`;
+// Inicia a troca automática dos banners se houver mais de um slide
+if (bannerSlides.length > 1) { // Só faz sentido se tiver mais de uma imagem para alternar
+    setInterval(showNextBanner, 4000); // Troca a cada 4 segundos (4000 milissegundos)
+} else if (bannerSlides.length === 1) {
+    // Se houver apenas um banner, certifique-se de que ele esteja visível
+    bannerSlides[0].classList.add("active");
 }
 
-setInterval(slideBanner, 4000); // Troca a cada 4s
+
+
 
