@@ -84,15 +84,16 @@ header {
 }
 .logo-carousel {
     position: relative;
-    max-width: 120px; /* Largura que você já tinha para o logo */
+    width: 120px; /* Largura que você já tinha para o logo */
     height: 120px; /* Altura que você já tinha ou ajuste conforme necessário */
     overflow: hidden; /* Esconde as imagens que não estão ativas */
     flex-shrink: 0; /* Impede que ele encolha no flexbox do header */
+    
 }
 
 /* Estilo para cada slide de logo */
 .logo-carousel .logo-slide {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     opacity: 0; /* Todas as imagens ficam invisíveis por padrão */
