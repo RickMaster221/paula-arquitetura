@@ -57,8 +57,8 @@ header {
 }
 .logo-carousel {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   overflow: hidden;
   flex-shrink: 0;
   display: flex;
