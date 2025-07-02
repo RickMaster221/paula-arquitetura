@@ -93,7 +93,7 @@ header {
 
 /* Estilo para cada slide de logo */
 .logo-carousel .logo-slide {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0; /* Todas as imagens ficam invisíveis por padrão */
