@@ -8,11 +8,11 @@ body {
 header {
   background: #008890;
   color: #e7e7dd;
-  padding: 20px;
+  padding: 20px 40px;
   display: flex;
-  align-items: center;
+  align-items: center; /* ✅ Alinha tudo verticalmente */
   justify-content: space-between;
-  position: relative;
+  gap: 20px;
 }
 
 .navbar {
@@ -83,33 +83,32 @@ header {
     display: inline; 
 }
 .logo-carousel {
-    position: relative;
-    width: 120px; /* Largura que você já tinha para o logo */
-    height: 120px; /* Altura que você já tinha ou ajuste conforme necessário */
-    overflow: hidden; /* Esconde as imagens que não estão ativas */
-    flex-shrink: 0; /* Impede que ele encolha no flexbox do header */
-    
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Estilo para cada slide de logo */
 .logo-carousel .logo-slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0; /* Todas as imagens ficam invisíveis por padrão */
-    transition: opacity 1s ease-in-out; /* Transição suave entre as imagens */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-/* Apenas a imagem com a classe 'active' será visível */
 .logo-carousel .logo-slide.active {
-    opacity: 1;
+  opacity: 1;
 }
 
-/* Estilo para as imagens dentro dos slides */
 .logo-carousel img {
   max-width: 100%;
   height: auto;
-  display: block;
+  object-fit: contain;
 }
 
 .carousel {
