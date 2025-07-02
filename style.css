@@ -5,10 +5,18 @@ body {
   color: #333;
 }
 
+header,
+.navbar,
+.entrada-banner,
+footer {
+  margin: 0;
+  padding: 0;
+}
+
 header {
   background: #008890;
   color: #e7e7dd;
-  padding: 20px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,7 +25,7 @@ header {
 
 .navbar {
   background-color: #00597b;
-  padding: 10px 0;
+  padding: 5px 0;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
