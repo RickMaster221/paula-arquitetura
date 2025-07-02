@@ -82,16 +82,43 @@ header {
     /* Remova o 'display: block' para que ele fique ao lado do h1 */
     display: inline; 
 }
-.logo {
-  max-width: 120px;
-  flex-shrink: 0;
+.logo-carousel {
+    position: relative;
+    width: 120px; /* Largura que você já tinha para o logo */
+    height: 120px; /* Altura que você já tinha ou ajuste conforme necessário */
+    overflow: hidden; /* Esconde as imagens que não estão ativas */
+    flex-shrink: 0; /* Impede que ele encolha no flexbox do header */
 }
 
-.logo img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* Estilo para cada slide de logo */
+.logo-carousel .logo-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Todas as imagens ficam invisíveis por padrão */
+    transition: opacity 1s ease-in-out; /* Transição suave entre as imagens */
 }
+
+/* Apenas a imagem com a classe 'active' será visível */
+.logo-carousel .logo-slide.active {
+    opacity: 1;
+}
+
+/* Estilo para as imagens dentro dos slides */
+.logo-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+    display: block;
+}
+
+/* Você pode remover a regra antiga .logo se não for mais usada */
+/*
+.logo {
+    max-width: 120px;
+    flex-shrink: 0;
+}
+*/
 
 .fake-logo {
   visibility: hidden; /* invisível, mas ocupa espaço */
