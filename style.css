@@ -159,10 +159,26 @@ header {
   margin: 30px 0;
 }
 
+.botoes-container {
+    /* POSICIONAMENTO DO CONTÊINER DOS BOTÕES */
+    position: absolute; /* Posiciona o contêiner em relação ao seu pai mais próximo com posição não-estática (neste caso, provavelmente a .entrada-banner) */
+    bottom: 20px;      /* Distância da borda inferior do pai */
+    right: 20px;       /* Distância da borda direita do pai */
+
+    /* ORGANIZAÇÃO DOS BOTÕES DENTRO DESTE CONTÊINER USANDO FLEXBOX */
+    display: flex;             /* Transforma o contêiner em um flex container */
+    flex-direction: column;    /* Organiza os itens (seus botões) em uma coluna, um abaixo do outro */
+    gap: 15px;                 /* Adiciona um espaço de 15px entre os botões */
+    align-items: flex-end;     /* Alinha os itens flex (os botões) à direita dentro do contêiner. */
+                               /* Se quiser que eles fiquem alinhados à esquerda do contêiner, use 'flex-start' */
+                               /* Se quiser que fiquem centralizados no contêiner, use 'center' */
+    z-index: 100;              /* Garante que os botões fiquem acima de outros elementos se houver sobreposição */
+}
+
 .btn {
   font-size: 50px;
   padding: 30px 120px;
-  background: linear-gradient(to right, #f13b2d, #fdba17);
+  background: linear-gradient(to right, #008890, #00597b);
   color: black;
   text-decoration: none;
   border-radius: 25px;
