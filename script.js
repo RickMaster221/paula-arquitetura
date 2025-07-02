@@ -68,7 +68,7 @@ document.querySelectorAll('video').forEach(video => {
 });
 
 let bannerIndex = 0;
-const bannerSlides = document.querySelectorAll(".banner-entrada-carousel .slide");
+const bannerSlides = document.querySelectorAll(".banner-index-carousel .slide");
 
 function showNextBanner() {
   bannerSlides[bannerIndex].classList.remove("active");
