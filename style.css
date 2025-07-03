@@ -468,6 +468,75 @@ footer a {
   height: 100%;
   object-fit: cover;
 }
+
+.formacao {
+  padding: 60px 20px;
+  background-color: #e7e7dd; /* cor de fundo suave */
+  text-align: center;
+}
+
+.formacao h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.formacao p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+}
+
+.habilidades {
+  padding: 60px 20px;
+  background-color: #e9f1f8; /* tom claro para destacar */
+  text-align: center;
+}
+
+.habilidades h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #2a2a2a;
+}
+
+.habilidades p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #444;
+  text-align: left; /* alinha os itens da lista */
+}
+
+.experiencia {
+  padding: 60px 20px;
+  background-color: #fefefe;
+  text-align: center;
+}
+
+.experiencia h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.experiencia ul {
+  list-style-type: disc;
+  padding-left: 40px;
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experiencia li {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 10px;
+}
+
 .botao-flutuante {
     position: fixed;
     /* ... outras propriedades de estilo ... */
