@@ -624,6 +624,7 @@ footer a {
   border-radius: 12px;
   box-shadow: 0 0 30px #000;
   display: block;
+  z-index: 10002;
 }
 
 .modal-close {
@@ -634,12 +635,40 @@ footer a {
   font-size: 48px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 10001;
+  z-index: 10003;
   transition: color 0.2s;
 }
 
 .modal-close:hover {
   color: #fdba17;
+}
+
+.modal-prev, .modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 48px;
+  padding: 12px 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10003;
+  transition: background 0.2s, color 0.2s;
+}
+
+.modal-prev {
+  left: 30px;
+}
+
+.modal-next {
+  right: 30px;
+}
+
+.modal-prev:hover, .modal-next:hover {
+  background: #fdba17;
+  color: #222;
 }
 .orcamento-titulo {
   background: #008890;

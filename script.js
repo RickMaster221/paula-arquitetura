@@ -132,21 +132,45 @@ if (bannerSlides.length > 1) { // Só faz sentido se tiver mais de uma imagem pa
     bannerSlides[0].classList.add("active");
 }
 
-// Maximizar imagens do carrossel
+// Maximizar imagens do carrossel com navegação
 
 document.addEventListener('DOMContentLoaded', function() {
   const imagensCarrossel = document.querySelectorAll('.carousel-slide img');
   const modal = document.getElementById('modal-imagem');
   const modalImg = document.getElementById('modal-img-grande');
   const modalClose = document.getElementById('modal-close');
+  const modalPrev = document.getElementById('modal-prev');
+  const modalNext = document.getElementById('modal-next');
 
-  imagensCarrossel.forEach(img => {
+  let imagensArray = Array.from(imagensCarrossel);
+  let imagemAtual = 0;
+
+  imagensCarrossel.forEach((img, idx) => {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', function() {
       modal.classList.add('active');
       modalImg.src = this.src;
       modalImg.alt = this.alt;
+      imagemAtual = idx;
     });
+  });
+
+  function mostrarImagem(idx) {
+    if (idx < 0) idx = imagensArray.length - 1;
+    if (idx >= imagensArray.length) idx = 0;
+    imagemAtual = idx;
+    modalImg.src = imagensArray[imagemAtual].src;
+    modalImg.alt = imagensArray[imagemAtual].alt;
+  }
+
+  modalPrev.addEventListener('click', function(e) {
+    e.stopPropagation();
+    mostrarImagem(imagemAtual - 1);
+  });
+
+  modalNext.addEventListener('click', function(e) {
+    e.stopPropagation();
+    mostrarImagem(imagemAtual + 1);
   });
 
   modalClose.addEventListener('click', function() {
