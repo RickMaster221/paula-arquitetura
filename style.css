@@ -553,5 +553,49 @@ footer a {
   background-color: #006666;
 }
 
+/* CSS para o modal de maximização de imagens do carrossel */
+.modal-imagem {
+  display: none; /* Escondido por padrão */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-imagem.active {
+  display: flex;
+}
+
+.modal-content {
+  max-width: 90vw;
+  max-height: 80vh;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 30px #000;
+  display: block;
+}
+
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #fff;
+  font-size: 48px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10001;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #fdba17;
+}
+
 
 

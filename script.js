@@ -132,6 +132,37 @@ if (bannerSlides.length > 1) { // Só faz sentido se tiver mais de uma imagem pa
     bannerSlides[0].classList.add("active");
 }
 
+// Maximizar imagens do carrossel
+
+document.addEventListener('DOMContentLoaded', function() {
+  const imagensCarrossel = document.querySelectorAll('.carousel-slide img');
+  const modal = document.getElementById('modal-imagem');
+  const modalImg = document.getElementById('modal-img-grande');
+  const modalClose = document.getElementById('modal-close');
+
+  imagensCarrossel.forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function() {
+      modal.classList.add('active');
+      modalImg.src = this.src;
+      modalImg.alt = this.alt;
+    });
+  });
+
+  modalClose.addEventListener('click', function() {
+    modal.classList.remove('active');
+    modalImg.src = '';
+  });
+
+  // Fechar ao clicar fora da imagem
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      modalImg.src = '';
+    }
+  });
+});
+
 
 
 
