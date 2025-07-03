@@ -37,74 +37,34 @@
   </nav>
 
   <main class="contato-page">
-    <h2>Peça um Orçamento</h2>
-    <h2 class="orcamento-titulo">INVESTIMENTO</h2>
-    <div class="orcamento-tabelas">
-      <div class="orcamento-coluna">
-        <h3>PROJETO DÓRICO</h3>
-        <p class="orcamento-incluso">Incluso:</p>
-        <ul>
-          <li>Planta Baixa</li>
-          <li>Planta Pavimentos</li>
-          <li>Planta de Cobertura</li>
-          <li>Cortes</li>
-          <li>Fachadas</li>
-        </ul>
-        <p class="orcamento-valores">Valores:</p>
-        <ul class="orcamento-valores-lista">
-          <li><span class="orcamento-preco">R$ 2.500,00</span> - até 100m²</li>
-          <li><span class="orcamento-preco">R$ 30,00/m²</span> - acima de 100m²</li>
-        </ul>
-      </div>
-      <div class="orcamento-coluna">
-        <h3>PROJETO COMPÓSITO</h3>
-        <p class="orcamento-incluso">Incluso:</p>
-        <ul>
-          <li>Planta Baixa</li>
-          <li>Planta Pavimentos</li>
-          <li>Planta de Cobertura</li>
-          <li>Cortes</li>
-          <li>Fachadas</li>
-          <li>Maquete 3D - 1 revisão + 10 fotos</li>
-        </ul>
-        <p class="orcamento-valores">Valores:</p>
-        <ul class="orcamento-valores-lista">
-          <li><span class="orcamento-preco">R$ 3.000,00</span> - até 100m²</li>
-          <li><span class="orcamento-preco">R$ 35,00/m²</span> - acima de 100m²</li>
-        </ul>
-      </div>
-      <div class="orcamento-coluna orcamento-adicionais">
-        <h3>ADICIONAIS</h3>
-        <ul class="orcamento-adicionais-lista">
-          <li>Revisão + 10 fotos <span class="orcamento-preco-adicional">R$ 50,00</span></li>
-          <li>Conjunto de 10 fotos <span class="orcamento-preco-adicional">R$ 35,00</span></li>
-          <li>Vídeo da maquete <span class="orcamento-preco-adicional">R$ 100,00</span></li>
-          <li>Maquetes:</li>
-          <ul class="orcamento-maquetes-lista">
-            <li>Básica (até 40m²) <span class="orcamento-preco-adicional">R$ 600,00</span></li>
-            <li>Inicial (até 80m²) <span class="orcamento-preco-adicional">R$ 1.200,00</span></li>
-            <li>Intermediária (80-120m²) <span class="orcamento-preco-adicional">R$ 1.700,00</span></li>
-            <li>Avançada (+120m²) <span class="orcamento-preco-adicional">R$ 2.000,00</span></li>
-          </ul>
-          <li>Visita em obra <span class="orcamento-preco-adicional">R$ 120,00</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="orcamento-inferior">
-      <div class="orcamento-observacoes">
-        <h4>Observações de Acordo</h4>
-        <p>Este documento não tem validade de registro e é apenas uma forma objetiva e prática de apresentar o orçamento. Entretanto, após a definição do serviço escolhido, enviaremos o contrato com todas as cláusulas, processos, valores e condições de pagamento.</p>
-      </div>
-      <div class="orcamento-pagamento">
-        <h4>Formas de Pagamento</h4>
-        <p>É aceito pagamentos em dinheiro, PIX e débito. No caso de parcelamento, no PIX em até 3x.</p>
-      </div>
-    </div>
-    <div class="orcamento-contato-btn-container">
-      <a class="orcamento-contato-btn" href="https://wa.me/5517997128031?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!" target="_blank">
-        <i class="fab fa-whatsapp"></i> Entre em contato
-      </a>
-    </div>
+    <h2>Entre em Contato</h2>
+    <form class="form-contato" id="formContato">
+      <label for="nome">Nome: <span style="color:red">*</span></label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email">
+
+      <label for="endereco">Endereço:</label>
+      <input type="text" id="endereco" name="endereco" placeholder="Rua, número">
+
+      <label for="bairro">Bairro:</label>
+      <input type="text" id="bairro" name="bairro">
+
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" name="cep" maxlength="9" pattern="\d{5}-?\d{3}" placeholder="00000-000">
+
+      <label for="cidade">Cidade:</label>
+      <input type="text" id="cidade" name="cidade">
+
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" name="estado">
+
+      <label for="mensagem">Mensagem: <span style="color:red">*</span></label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
   </main>
 
   <footer>
@@ -116,5 +76,41 @@
     </div>
   </footer>
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cep-promise/dist/cep-promise.min.js"></script>
+<script>
+  document.getElementById('cep').addEventListener('blur', function() {
+    var cep = this.value.replace(/\D/g, '');
+    if (cep.length === 8) {
+      cepPromise(cep).then(function(info) {
+        if(info.street) document.getElementById('endereco').value = info.street;
+        if(info.neighborhood) document.getElementById('bairro').value = info.neighborhood;
+        if(info.city) document.getElementById('cidade').value = info.city;
+        if(info.state) document.getElementById('estado').value = info.state;
+      }).catch(function(){});
+    }
+  });
+
+  document.getElementById('formContato').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var nome = document.getElementById('nome').value;
+    var email = document.getElementById('email').value;
+    var endereco = document.getElementById('endereco').value;
+    var bairro = document.getElementById('bairro').value;
+    var cep = document.getElementById('cep').value;
+    var cidade = document.getElementById('cidade').value;
+    var estado = document.getElementById('estado').value;
+    var mensagem = document.getElementById('mensagem').value;
+    var texto = `Nome: ${nome}\n` +
+                (email ? `E-mail: ${email}\n` : '') +
+                (endereco ? `Endereço: ${endereco}\n` : '') +
+                (bairro ? `Bairro: ${bairro}\n` : '') +
+                (cep ? `CEP: ${cep}\n` : '') +
+                (cidade ? `Cidade: ${cidade}\n` : '') +
+                (estado ? `Estado: ${estado}\n` : '') +
+                `Mensagem: ${mensagem}`;
+    var url = `https://wa.me/5517997128031?text=${encodeURIComponent(texto)}`;
+    window.open(url, '_blank');
+  });
+</script>
 </body>
 </html>
