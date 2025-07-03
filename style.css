@@ -164,6 +164,33 @@ header {
   margin: 30px 0;
 }
 
+.cta-orcamento {
+  text-align: center;
+  margin: 40px 0 30px 0;
+  color: #e3e1d7;
+  font-size: 1.6rem;
+}
+
+.cta-orcamento .btn-orcamento {
+  display: inline-block;
+  margin-top: 18px;
+  background: linear-gradient(to right, #008890, #00597b);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 14px 36px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cta-orcamento .btn-orcamento:hover {
+  background: linear-gradient(to right, #00597b, #008890);
+  transform: translateY(-2px) scale(1.04);
+  color: #fff;
+}
+
 .entrada-banner .botoes-container {
     /* POSICIONAMENTO DO CONTÊINER DOS BOTÕES */
     position: absolute; /* Posiciona o contêiner em relação ao seu pai mais próximo com posição não-estática (neste caso, provavelmente a .entrada-banner) */
