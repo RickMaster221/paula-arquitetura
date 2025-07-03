@@ -407,10 +407,14 @@ footer a {
   .formacao-content {
     flex-direction: column;
     align-items: stretch;
+    padding: 0 10px;
   }
   .formacao-texto {
     margin-left: 0;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 8px;
   }
   .formacao-img {
     justify-content: center;
@@ -740,6 +744,103 @@ footer a {
   }
   .orcamento-inferior {
     gap: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 20px 0;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .logo-carousel {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+  }
+
+  .title h1 {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    justify-content: center;
+    width: auto;
+  }
+
+  .subtitle h2 {
+    font-size: 18px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  .entrada-conteudo {
+    flex-direction: column;
+    align-items: flex-start;
+    left: 0;
+    max-width: 100vw;
+    width: 100vw;
+    padding: 0 10px;
+    position: static;
+    transform: none;
+    gap: 10px;
+  }
+  .entrada-conteudo-texto {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 8px;
+    text-align: left;
+  }
+  .formacao-content {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 10px;
+  }
+  .formacao-texto {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 8px;
+  }
+  .formacao-img {
+    justify-content: center;
+  }
+  .formacao-img img {
+    margin-right: 0;
+    max-width: 90%;
+  }
+  .descricao {
+    position: static;
+    margin: 20px 10px 0 10px;
+    left: auto;
+    bottom: auto;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    font-size: 18px;
+    max-width: 100%;
+    z-index: 1;
   }
 }
 
