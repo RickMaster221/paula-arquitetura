@@ -321,8 +321,8 @@ footer a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
+  border: 2px solid #000;      /* Adiciona a borda preta */
+  padding: 18px;               /* Espaço interno para afastar o texto da borda */
 }
 
 .entrada-conteudo h2 {
