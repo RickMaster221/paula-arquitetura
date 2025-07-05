@@ -329,6 +329,16 @@ footer a {
      1px  1px 0 #000;            /* Espaço interno para afastar o texto da borda */
 }
 
+.nome-completo {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .nome-completo {
+    font-size: 20px !important;
+  }
+}
+
 .entrada-conteudo h2 {
   font-size: 36px;  /* antes: 28px */
   margin: 0;
